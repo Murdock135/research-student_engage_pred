@@ -1,0 +1,34 @@
+def get_gender(name):
+    if re.search("\sA/l\s", name, re.IGNORECASE):
+        return "male"
+    elif re.search("\sA/p\s", name, re.IGNORECASE):
+        return "female"
+    elif re.search(r"\sbin\s", name, re.IGNORECASE):
+        return "male"
+    elif re.search(r"\sbinti\s", name, re.IGNORECASE):
+        return "female"
+    elif re.search(r"\sb\s", name, re.IGNORECASE):
+        return "male"
+    elif re.search(r"\sbt\s", name, re.IGNORECASE):
+        return "female"
+    elif re.search(r"\sbinte\s", name, re.IGNORECASE):
+        return "female"
+    elif re.search(r"\sa\.l\s", name, re.IGNORECASE):
+        return "male"
+    elif re.search(r"\sa\.p\s", name, re.IGNORECASE):
+        return "female"
+    elif re.search(r"\sanak\s", name, re.IGNORECASE):
+        return "male"
+    elif re.search(r"\sal\s", name, re.IGNORECASE):
+        return "male"
+    elif re.search(r"\sA/ P\s", name, re.IGNORECASE):
+        return "female"
+    elif re.search(r"\ss/o\s", name, re.IGNORECASE):
+        return "male"
+    elif re.search(r"\sd/o\s", name, re.IGNORECASE):
+        return "female"
+    elif re.search(r"\sBte\s", name, re.IGNORECASE):
+        return "female"
+    else:
+        return "unknown"
+final["gender"] = final.firstname.progress_apply(lambda x: get_gender(x))
